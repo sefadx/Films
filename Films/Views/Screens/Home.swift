@@ -12,41 +12,55 @@ struct Home: View {
     var network : FilmNetwork = FilmNetwork()
     
     @State var searchText : String = ""
-    
-    @State var filmList : [FilmModel] = []
-    
-    
+    @State var launch : Bool = true
+    @State var filmList : [FilmModel]? = []
     
     var body: some View {
-        VStack{
-            AppBar(
-                searchText: $searchText,
-                searchOnPressed: {
-                    withAnimation(){
+        
+        NavigationView{
+            VStack{
+                AppBar(
+                    searchText: $searchText,
+                    searchOnPressed: {
+                        launch = false
+                        
                         network.getName(filmName: self.searchText){film in
-                             if film != nil {
-                                 print("film geldi")
-                                 filmList.removeAll()
-                                 filmList.append(film!)
-                             }else{
-                                 print("film gelmedi")
-                                 filmList.removeAll()
-                             }
-                         }
-                    }
+                            
+                            if film != nil {
+                                print("film geldi")
+                                filmList = []
+                                filmList!.append(film!)
+                            }else{
+                                print("film gelmedi")
+                                filmList = nil
+                            }
+                            
+                        }
+                        
+                    })
+                if launch == true{
                     
-                })
-            if filmList.isEmpty{
-               
-            }
-            else{
-                ScrollView{
-                    ForEach(filmList, id: \.self){ film in
-                        FilmCard(name: film.title, description: film.description, year: film.year, imageUrl: film.imageUrl).transition(.slide)
-                    }.padding(.all,5)
-                }.padding(.all,0)
-            }
+                }else if filmList == nil{
+                    VStack{
+                        Spacer()
+                        Text("Film bulunamadı").font(.body).foregroundColor(.white)
+                        Spacer()
+                    }
+                }
+                else{
+                    ScrollView{
+                        ForEach(filmList!, id: \.self){ film in
+                            //FilmCard(name: film.title, description: film.description, year: film.year, imageUrl: film.imageUrl)
+                            FilmCard(film: film)
+                            
+                        }.padding(.all,5)
+                    }.padding(.all,0)
+                }
+            }.navigationBarHidden(true)
         }
+        
+        
+        
     }
 }
 

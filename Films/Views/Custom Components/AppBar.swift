@@ -12,6 +12,8 @@ struct AppBar: View {
     @Binding var searchText : String
     
     var searchOnPressed : ()-> Void = {}
+    var textChanged : (Bool)-> Void = {value in}
+    
     
     var body: some View {
         HStack{
@@ -20,7 +22,7 @@ struct AppBar: View {
             
             Rectangle().frame(width: 10,height: 0)
             
-            TextField("film ara", text: $searchText)
+            TextField("film ara", text: $searchText, onEditingChanged: self.textChanged)
                 .padding(.all,5).padding(.leading,10)
                 .cornerRadius(15)
                 .foregroundColor(.black)
@@ -39,7 +41,7 @@ struct AppBar: View {
                     
                     Image(systemName: "magnifyingglass").renderingMode(.original).foregroundColor(.white).font(.title2)
                     
-                }.transition(.opacity)
+                }.transition(.scale)
             }
         }.padding(.all,15)
             .background(Color.black)

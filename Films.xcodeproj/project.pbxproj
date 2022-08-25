@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3D90BC328B77CE20035964E /* FilmDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D90BC228B77CE20035964E /* FilmDetail.swift */; };
 		D3E0193028B4D10400C6DD6A /* AppBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0192F28B4D10400C6DD6A /* AppBar.swift */; };
 		D3E0193228B4D17A00C6DD6A /* FilmCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0193128B4D17A00C6DD6A /* FilmCard.swift */; };
 		D3E0193528B4EFA800C6DD6A /* FilmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0193428B4EFA800C6DD6A /* FilmModel.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D3D90BC228B77CE20035964E /* FilmDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetail.swift; sourceTree = "<group>"; };
 		D3E0192F28B4D10400C6DD6A /* AppBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBar.swift; sourceTree = "<group>"; };
 		D3E0193128B4D17A00C6DD6A /* FilmCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCard.swift; sourceTree = "<group>"; };
 		D3E0193428B4EFA800C6DD6A /* FilmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmModel.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				D3E3633028B3DE370040FF45 /* Home.swift */,
+				D3D90BC228B77CE20035964E /* FilmDetail.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			files = (
 				D3E3632328B3A6370040FF45 /* ContentView.swift in Sources */,
 				D3E0193528B4EFA800C6DD6A /* FilmModel.swift in Sources */,
+				D3D90BC328B77CE20035964E /* FilmDetail.swift in Sources */,
 				D3E0193028B4D10400C6DD6A /* AppBar.swift in Sources */,
 				D3E3633128B3DE370040FF45 /* Home.swift in Sources */,
 				D3E0193828B52FD700C6DD6A /* FilmNetwork.swift in Sources */,

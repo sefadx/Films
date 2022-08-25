@@ -13,6 +13,7 @@ struct FilmModel : Hashable{
     var description : String
     var year : String
     var imageUrl : String
+    var imageUI : UIImage?
 
 }
 
